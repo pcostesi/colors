@@ -23,7 +23,6 @@ const IndexPage = ({ data }) => {
       )}
     </div>
   )
-  return <div></div>
 }
 
 

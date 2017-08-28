@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import './index.scss';
+// import './index.scss';
 
 const Header = () => <div>Empty header please change me asap :)</div>
 
