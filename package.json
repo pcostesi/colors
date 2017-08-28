@@ -6,8 +6,16 @@
   "dependencies": {
     "gatsby": "^1.8.12",
     "gatsby-link": "^1.6.8",
-    "gatsby-plugin-react-helmet": "^1.0.3",
-    "gatsby-plugin-typescript": "^1.4.5"
+    "gatsby-plugin-catch-links": "^1.0.6",
+    "gatsby-plugin-react-helmet": "^1.0.4",
+    "gatsby-plugin-typescript": "^1.4.5",
+    "gatsby-remark-autolink-headers": "^1.4.5",
+    "gatsby-remark-copy-linked-files": "^1.5.3",
+    "gatsby-remark-images": "^1.5.5",
+    "gatsby-source-filesystem": "^1.4.6",
+    "gatsby-transformer-json": "^1.0.4",
+    "gatsby-transformer-remark": "^1.7.3",
+    "gatsby-transformer-sharp": "^1.6.2"
   },
   "keywords": [
     "gatsby"
@@ -21,6 +29,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "plop": "^1.8.1",
     "prettier": "^1.5.2"
   }
 }
