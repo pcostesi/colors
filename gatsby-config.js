@@ -1,10 +1,15 @@
 module.exports = {
   siteMetadata: {
     title: `Colors of SABF`,
+    description: `Everyday stories from awesome people.`,
+    siteUrl: 'https://colors.sabf.org.ar'
   },
   plugins: [
     // typescript support
     `gatsby-plugin-typescript`,
+
+    // sass support
+    `gatsby-plugin-sass`,
 
     // add tags to <head/> from the body
     `gatsby-plugin-react-helmet`,
@@ -18,21 +23,12 @@ module.exports = {
     // parse JSON files
     `gatsby-transformer-json`,
 
-    // Data source: Stories (English)
+    // Data source: Stories
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `stories-en`,
-        path: `${__dirname}/stories/en`,
-      },
-    },
-
-    // Data source: Stories (Spanish)
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `stories-es`,
-        path: `${__dirname}/stories/es`,
+        name: `stories`,
+        path: `${__dirname}/stories`,
       },
     },
 
@@ -58,6 +54,16 @@ module.exports = {
           `gatsby-remark-autolink-headers`
         ]
       }
+    },
+
+    // RSS Feed
+    {
+      resolve: `gatsby-plugin-feed`
+    },
+
+    // Sitemap
+    {
+      resolve: `gatsby-plugin-sitemap`
     }
   ],
 }
