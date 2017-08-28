@@ -1,0 +1,52 @@
+/* The following are the official color definitions as specified
+ * in the brand book. Colors are named according the brand book.
+ */
+
+// 1.a -- Blue A -- R: 40 G: 121 B: 181 || #2879b5
+// 1.b -- Blue B -- R: 100 G: 193 B: 198 || #64c1c6
+// 2.a -- Green A -- R: 0 G: 168 B: 122 || #00a87a
+// 2.b -- Green B -- R: 156 G: 203 B: 143 || #9ccb8f
+// 3.a -- Yellow A -- R: 248 G: 176 B: 0 || #f8b000
+// 3.b -- Yellow B -- R: 255 G: 230 B: 171 || #ffe6ab
+// 4.a -- Red A -- R: 236 G: 106 B: 98 || #ec6a62
+// 4.b -- Red B -- R: 246 G: 171 B: 111 || #f6ab6f
+// 5 -- Black - R: 111 G: 111 B: 111 || #6f6f6f
+// White (not branded) -- R: 255 G: 255 B: 255 || #ffffff
+
+// FORCED DEFAULT TO PREVENT OVERRIDES
+$sabf-blue-a: rgb(40, 121, 181) !default;
+$sabf-blue-b: rgb(100, 193, 198) !default;
+$sabf-green-a: rgb(0, 168, 122) !default;
+$sabf-green-b: rgb(156, 203, 143) !default;
+$sabf-yellow-a: rgb(248, 176, 0) !default;
+$sabf-yellow-b: rgb(255, 230, 171) !default;
+$sabf-red-a: rgb(236, 106, 98) !default;
+$sabf-red-b: rgb(246, 171, 111) !default;
+$sabf-black: rgb(111, 111, 111) !default;
+$sabf-white: rgb(255, 255, 255) !default;
+
+/* Theme colors (derived from the brand book colors) */
+
+$sabf-background: darken($sabf-white, 10%);
+$sabf-primary: $sabf-blue-a;
+$sabf-secondary: $sabf-green-a;
+$sabf-foreground: $sabf-black;
+
+$sabf-background-inverted: $sabf-black;
+$sabf-primary-inverted: $sabf-blue-b;
+$sabf-secondary-inverted: $sabf-green-b;
+$sabf-foreground-inverted: darken($sabf-white, 10%);
+
+
+// BS4 Colors -- Added for convenience
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  primary: $sabf-blue-a,
+  secondary: $sabf-green-a,
+  success: $sabf-green-b,
+  info: $sabf-blue-b,
+  warning: $sabf-yellow-a,
+  danger: $sabf-red-a,
+  light: lighten($sabf-black, 10%),
+  dark: $sabf-black
+), $theme-colors);
