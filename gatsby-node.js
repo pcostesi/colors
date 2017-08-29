@@ -35,6 +35,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     createPage({
                         path: `/${node.fields.slug}`,
                         component: path.resolve(`./src/templates/post.tsx`),
+                        // THIS IS HOW YOU SELECT THE LAYOUT!
+                        // layout: `alternative`,
                         context: {
                             // Data passed to context is available in page queries as GraphQL variables.
                             slug: node.fields.slug,
