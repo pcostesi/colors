@@ -5,7 +5,7 @@ interface IndexPageProps {
   data: any;
 }
 
-const IndexPage = ({ data } : IndexPageProps) => {
+const IndexPage: React.SFC<IndexPageProps> = ({ data }) => {
   return (
     <div>
       <h1>
