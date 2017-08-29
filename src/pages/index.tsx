@@ -17,7 +17,7 @@ const IndexPage: React.SFC<IndexPageProps> = ({ data }) => {
       {data.allMarkdownRemark.edges.map(({ node }) =>
         <div key={node.frontmatter.title}>
           <h3>
-            {node.frontmatter.title}{" "}
+            <Link to={`/${node.frontmatter.slug}`}>{node.frontmatter.title}</Link>{" "}
             <span>— {node.frontmatter.date}</span>
           </h3>
           <p>
@@ -39,12 +39,13 @@ export const query = graphql`
         title
       }
     },
-    allMarkdownRemark {
+    allMarkdownRemark(sort: {fields: [frontmatter___date], order: DESC}) {
       totalCount
       edges {
         node {
           frontmatter {
             title
+            slug
             date(formatString: "DD MMMM, YYYY")
           }
           excerpt

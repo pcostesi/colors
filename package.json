@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Pablo Alejandro Costesich <pablo.costesich@sabf.org.ar>",
   "dependencies": {
+    "@types/graphql": "^0.10.2",
     "@types/prop-types": "^15.5.1",
     "@types/react": "^16.0.0",
     "@types/react-dom": "^15.5.4",

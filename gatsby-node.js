@@ -1,22 +1,23 @@
+const path = require(`path`);
+
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `stories` })
-    console.log(node, `===`, slug)
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  }
+    const { createNodeField } = boundActionCreators
+    if (node.internal.type === `MarkdownRemark`) {
+        const slug = createFilePath({ node, getNode, basePath: `stories` })
+        createNodeField({
+            node,
+            name: `slug`,
+            value: node.frontmatter.slug || slug,
+        })
+    }
 }
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    graphql(`
+    const { createPage } = boundActionCreators
+    return new Promise((resolve, reject) => {
+        graphql(`
       {
         allMarkdownRemark {
           edges {
@@ -28,10 +29,20 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       }
-    `
-).then(result => {
-      console.log(JSON.stringify(result, null, 4))
-      resolve()
+    `).then(result => {
+                console.log(JSON.stringify(result, null, 4))
+                result.data.allMarkdownRemark.edges.map(({ node }) => {
+                    createPage({
+                        path: `/${node.fields.slug}`,
+                        component: path.resolve(`./src/templates/post.tsx`),
+                        context: {
+                            // Data passed to context is available in page queries as GraphQL variables.
+                            slug: node.fields.slug,
+                        },
+                    })
+                })
+
+                resolve()
+            })
     })
-  })
 }
