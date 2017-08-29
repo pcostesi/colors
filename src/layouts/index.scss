@@ -1,2 +1,11 @@
 @import '../styles/_colors';
 @import '../styles/_typography';
+
+html, body {
+    background: $sabf-background;
+    color: $sabf-foreground;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $sabf-primary;
+}

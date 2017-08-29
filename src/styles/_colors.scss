@@ -27,7 +27,7 @@ $sabf-white: rgb(255, 255, 255) !default;
 
 /* Theme colors (derived from the brand book colors) */
 
-$sabf-background: darken($sabf-white, 10%);
+$sabf-background: $sabf-white;
 $sabf-primary: $sabf-blue-a;
 $sabf-secondary: $sabf-green-a;
 $sabf-foreground: $sabf-black;
