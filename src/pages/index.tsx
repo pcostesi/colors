@@ -1,7 +1,11 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = ({ data }) => {
+interface IndexPageProps {
+  data: any;
+}
+
+const IndexPage = ({ data } : IndexPageProps) => {
   return (
     <div>
       <h1>
@@ -11,7 +15,7 @@ const IndexPage = ({ data }) => {
         {data.allMarkdownRemark.totalCount} Posts
       </h4>
       {data.allMarkdownRemark.edges.map(({ node }) =>
-        <div>
+        <div key={node.frontmatter.title}>
           <h3>
             {node.frontmatter.title}{" "}
             <span>— {node.frontmatter.date}</span>
