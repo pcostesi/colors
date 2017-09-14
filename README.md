@@ -1,4 +1,6 @@
 # colors
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pcostesi/colors.svg)](https://greenkeeper.io/)
 Colors is a site about stories of everyday people
 
 =======
